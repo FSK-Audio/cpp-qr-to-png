@@ -9,13 +9,10 @@
  * you don't need to include '::experimental::',
  * you can just include "::filesystem". The below
  * code makes both work, accessible at 'fs::'. */
-#if defined(__GNUC__) && __GNUC__ < 9
-#include <experimental/filesystem>
-namespace fs = std::experimental::filesystem;
-#else
+
 #include <filesystem>
 namespace fs = std::filesystem;
-#endif
+
 
 #include "QrCode.hpp"
 #include "TinyPngOut.hpp"
