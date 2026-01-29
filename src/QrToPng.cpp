@@ -16,7 +16,7 @@ bool QrToPng::writeToPNG() {
         return false;
 
 
-    if (!_overwriteExistingFile and fs::exists(_fileName))
+    if (!_overwriteExistingFile && fs::exists(_fileName))
         return false;
 
     auto _qr = qrcodegen::QrCode::encodeText("", _ecc);
@@ -30,7 +30,7 @@ bool QrToPng::writeToPNG() {
         return false;
     }
 
-    if (_overwriteExistingFile and fs::exists(_fileName))
+    if (_overwriteExistingFile && fs::exists(_fileName))
         if (!fs::copy_file(_fileName, _fileName + ".tmp", fs::copy_options::overwrite_existing))
             return false;
 
